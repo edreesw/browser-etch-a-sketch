@@ -4,6 +4,57 @@ html,body {
 	align-items: center; 
 }
 
+header {
+	align-content: center;
+	display: block;
+	margin: auto; 
+	width: 60%; 
+}
+header * {
+	margin: 10px;
+	padding: 0px; 
+}
+
+#options-container button {
+	display: inline-block; 
+	padding: 20px 20px 20px 20px; 
+	margin: 10px 5px 10px 5px; 
+	border: none; 
+	border-radius: 5px; 
+	background-color: lightgray; 
+	width: 30%
+}
+
+#options-container button:hover {
+	background-color: #C8C8C8;
+	/*
+	border-color: darkgray; 
+	border-style: solid; 
+	border-width: 1px; 
+	*/
+}
+#options-container button:active {
+	background-color: #BEBEBE;
+
+}
+
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
+#options-container {
+	text-align: center; 
+}
+/*
+#options-container * {
+	display: inline-block; 
+	margin: 10px auto 10px auto;
+	padding: 10px;
+}*/
+
+
 .text-element {
 	text-align: center; 
 }
