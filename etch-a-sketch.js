@@ -1,6 +1,45 @@
-const gridDimensions = 32; 
+const default_dimensions = 32; 
 const gridContainer = document.querySelector("#main-grid-container"); 
-const boxColor = "darkgray"; 
+const boxFilledColor = "darkgray"; 
+const boxDefaultColor = "white"; 
+
+function colorBox(e) {
+	//console.log("in mouseover event function"); 
+	this.style.backgroundColor = boxFilledColor; 
+}
+
+function clearGrid(e) {
+	/* TODO: 
+		return all boxes back to default to clear grid
+	*/
+	let boxes = document.querySelectorAll(".box"); 
+	boxes.forEach(box => { 
+		box.style.backgroundColor = boxDefaultColor 
+	}); 
+}
+
+function changeGridDimensions(e) {
+	/* TODO: 
+		change dimension variable
+		delete current grid elements
+		create new grid with new dimensions by calling drawGrid(); 
+	*/
+	let newDimensions = prompt("Enter a number up to 128 to select a new grid size."); 
+	if(newDimensions===null) {return;}
+	while(isNaN(parseInt(newDimensions)) || parseInt(newDimensions) > 128 || parseInt(newDimensions) < 1) {
+		console.log(newDimensions); 
+		newDimensions = prompt("Incorrect entry. Enter a number up to 128 to select a new grid size."); 
+		if(newDimensions===null) {return;}
+	}
+
+	let curChild = gridContainer.firstElementChild;  
+    while (curChild) { 
+	    gridContainer.removeChild(curChild); 
+	    curChild = gridContainer.lastElementChild; 
+	}
+
+	drawGrid(newDimensions); 
+}
 
 function drawGrid(dimensions) {
 	/* TODO: 
@@ -18,23 +57,27 @@ function drawGrid(dimensions) {
 		}
 		gridContainer.appendChild(row); 
 	}
+
+	let boxes = document.querySelectorAll(".box"); 
+	boxes.forEach(box => { 
+		box.addEventListener("mouseover", colorBox); 
+	}); 
 }
 
 /* TODO:
 	add event listeners to buttons (redraw with new dimensions)
 */
 
-function changeBoxColor(e) {
-	console.log("in mouseover event function"); 
-	this.style.backgroundColor = boxColor; 
-}
 
 
+const clearBtn = document.querySelector("#clear-button"); 
+const changeDimBtn = document.querySelector("#change-dimensions-button"); 
 
-console.log("starting"); 
-drawGrid(gridDimensions); 
+clearBtn.addEventListener("click", clearGrid); 
 
-const boxes = document.querySelectorAll(".box"); 
-boxes.forEach(box => { 
-  box.addEventListener("mouseover", changeBoxColor); 
-}); 
+changeDimBtn.addEventListener("click", changeGridDimensions); 
+
+
+//console.log("starting"); 
+drawGrid(default_dimensions); 
+

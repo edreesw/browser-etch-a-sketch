@@ -2,6 +2,7 @@ html,body {
 	margin: 0; 
 	padding: 0; 
 	align-items: center; 
+	font-family: Arial; 
 }
 
 header {
@@ -22,7 +23,7 @@ header * {
 	border: none; 
 	border-radius: 5px; 
 	background-color: lightgray; 
-	width: 30%
+	width: 30%; 
 }
 
 #options-container button:hover {
