@@ -54,6 +54,7 @@ function drawGrid(dimensions) {
 		for(let j = 0; j < dimensions; j++) {
 			let box = document.createElement("div"); 
 			box.classList.add("box"); 
+			box.classList.add("display-grid"); 
 			row.appendChild(box); 
 		}
 		gridContainer.appendChild(row); 
