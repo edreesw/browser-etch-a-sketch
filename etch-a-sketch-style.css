@@ -3,6 +3,11 @@ html,body {
 	padding: 0; 
 	align-items: center; 
 	font-family: Arial; 
+
+}
+
+html {
+	background-image: linear-gradient(#e33939, #e57f7f);
 }
 
 header {
@@ -23,7 +28,7 @@ header * {
 	border: none; 
 	border-radius: 5px; 
 	background-color: lightgray; 
-	width: 30%; 
+	width: 25%; 
 }
 
 #options-container button:hover {
@@ -48,12 +53,6 @@ button::-moz-focus-inner {
 #options-container {
 	text-align: center; 
 }
-/*
-#options-container * {
-	display: inline-block; 
-	margin: 10px auto 10px auto;
-	padding: 10px;
-}*/
 
 
 .text-element {
@@ -63,16 +62,13 @@ button::-moz-focus-inner {
 #main-grid-container {
 	display: flex; 
 	flex-direction: column; 
-	/*justify-content: center; 
-	align-items: center; 
-	align-content: center; 
-	*/
 	height: 640px;
 	width: 640px;  
 	margin: auto;
 	background-color: lightblue; 
 	border-style: solid;
 	border-color: darkgray; 
+	border-width: 1px; 
 }
 
 .row {
@@ -90,6 +86,20 @@ button::-moz-focus-inner {
 	height: 100%; 
 	width: 100%;  
 	
+	
+	/*handle background color in the js */
+	/*background-color: white;*/
+}
+
+.display-grid {
 	border: 0.10px solid darkgray;
-	background-color: white; 
+}
+
+
+footer {
+	background-color: lightgray;
+	opacity: .2; 
+	text-align: center;
+	margin-top: 40px; 
+	padding: 10px; 
 }
