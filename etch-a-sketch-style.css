@@ -6,6 +6,12 @@ html,body {
 
 }
 
+body {
+	position: relative; 
+	min-height: 100vh;
+	padding-bottom: 40px; 
+}
+
 html {
 	background-image: linear-gradient(#e33939, #e57f7f);
 }
@@ -95,11 +101,23 @@ button::-moz-focus-inner {
 	border: 0.10px solid darkgray;
 }
 
-
+/*
 footer {
 	background-color: lightgray;
 	opacity: .2; 
 	text-align: center;
 	margin-top: 40px; 
 	padding: 10px; 
+}
+*/
+
+footer {
+	position: absolute;
+	text-align: center;
+	/*margin-top: 40px; */
+	background-color: lightgray;
+	width: 100%;
+	bottom: 0; 
+	padding: 10px; 
+	opacity: .5;
 }
